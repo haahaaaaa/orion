@@ -21,6 +21,9 @@ ClickSound.SoundId = "rbxassetid://9119056442"
 ClickSound.PlaybackSpeed = 1
 
 local Player = game.Players.LocalPlayer
+local wsbool = false
+local jpbool = false
+local hhbool = false
 
 local HomeTab = Window:MakeTab({
 	Name = "Home",
@@ -84,6 +87,20 @@ MiscTab:AddButton({
         OrionLib:MakeNotification({
             Name = "BloopUI",
             Content = "FE Animation GUI (R6) loaded",
+            Image = "rbxassetid://4483345998",
+            Time = 5,
+            NotifSound:Play()
+        })
+  	end    
+})
+
+MiscTab:AddButton({
+	Name = "UNC Test (Unified Naming Convention)",
+	Callback = function()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/unified-naming-convention/NamingStandard/main/UNCCheckEnv.lua", true))()
+        OrionLib:MakeNotification({
+            Name = "BloopUI",
+            Content = "UNC Test Loaded!!",
             Image = "rbxassetid://4483345998",
             Time = 5,
             NotifSound:Play()
@@ -162,6 +179,98 @@ ScriptsTab:AddButton({
   	end    
 })
 
+ScriptsTab:AddButton({
+	Name = "Sky Hub",
+	Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/yofriendfromschool1/Sky-Hub/main/SkyHub.txt"))()
+        OrionLib:MakeNotification({
+            Name = "BloopUI",
+            Content = "Sky Hub script loaded",
+            Image = "rbxassetid://4483345998",
+            Time = 5,
+            NotifSound:Play()
+        })
+  	end    
+})
+
+ScriptsTab:AddButton({
+	Name = "Anti-AFK",
+	Callback = function()
+		loadstring(game:HttpGet('https://raw.githubusercontent.com/haahaaaaa/orion/refs/heads/main/antiafk.lua'))()
+        OrionLib:MakeNotification({
+            Name = "BloopUI",
+            Content = "Anti-AFK script loaded",
+            Image = "rbxassetid://4483345998",
+            Time = 5,
+            NotifSound:Play()
+        })
+  	end    
+})
+
+ScriptsTab:AddButton({
+	Name = "Vertex MM2 Hub",
+	Callback = function()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/vertex-peak/vertex/refs/heads/main/loadstring"))()
+        OrionLib:MakeNotification({
+            Name = "BloopUI",
+            Content = "Vertex MM2 script loaded",
+            Image = "rbxassetid://4483345998",
+            Time = 5,
+            NotifSound:Play()
+        })
+  	end    
+})
+
+ScriptsTab:AddButton({
+	Name = "TSB Glacier Hub",
+	Callback = function()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/xVicity/GLACIER/main/LATEST.lua"))()
+        OrionLib:MakeNotification({
+            Name = "BloopUI",
+            Content = "Vertex MM2 script loaded",
+            Image = "rbxassetid://4483345998",
+            Time = 5,
+            NotifSound:Play()
+        })
+  	end    
+})
+
+ScriptsTab:AddButton({
+	Name = "STFO Script",
+	Callback = function()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/MaxicsSoft/XyrezAutoRank/main/StealTimeFromOthers.lua"))()
+        OrionLib:MakeNotification({
+            Name = "BloopUI",
+            Content = "Vertex MM2 script loaded",
+            Image = "rbxassetid://4483345998",
+            Time = 5,
+            NotifSound:Play()
+        })
+  	end    
+})
+
+ScriptsTab:AddButton({
+	Name = "Orca Hub",
+	Callback = function()
+		loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/richie0866/orca/master/public/latest.lua"))()
+        OrionLib:MakeNotification({
+            Name = "BloopUI",
+            Content = "Vertex MM2 script loaded",
+            Image = "rbxassetid://4483345998",
+            Time = 5,
+            NotifSound:Play()
+        })
+  	end    
+})
+
+PlayerTab:AddToggle({
+	Name = "Walkspeed",
+	Default = false,
+	Callback = function(Value)
+		wsbool = Value
+	end    
+})
+
 
 PlayerTab:AddSlider({
 	Name = "WalkSpeed",
@@ -172,8 +281,17 @@ PlayerTab:AddSlider({
 	Increment = 1,
 	ValueName = "WalkSpeed",
 	Callback = function(Value)
-		Player.Character.Humanoid.WalkSpeed = Value
-        ClickSound:Play()
+		if wsbool == true then
+			Player.Character.Humanoid.WalkSpeed = Value
+		end
+	end    
+})
+
+PlayerTab:AddToggle({
+	Name = "JumpPower",
+	Default = false,
+	Callback = function(Value)
+		jpbool = Value
 	end    
 })
 
@@ -186,8 +304,32 @@ PlayerTab:AddSlider({
 	Increment = 1,
 	ValueName = "JumpPower",
 	Callback = function(Value)
-		Player.Character.Humanoid.JumpPower = Value
-        ClickSound:Play()
+		if jpbool == true then
+			Player.Character.Humanoid.JumpPower = Value
+		end
+	end    
+})
+
+PlayerTab:AddToggle({
+	Name = "HipHeight",
+	Default = false,
+	Callback = function(Value)
+		hhbool = Value
+	end    
+})
+
+PlayerTab:AddSlider({
+	Name = "HipHeight",
+	Min = 0,
+	Max = 500,
+	Default = 0,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 1,
+	ValueName = "HipHeight",
+	Callback = function(Value)
+		if hhbool == true then
+			Player.Character.Humanoid.HipHeight = Value
+		end
 	end    
 })
 
@@ -250,3 +392,6 @@ Time = <number> - The duration of the notfication.
 
 
 OrionLib:Init()
+
+
+

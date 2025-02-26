@@ -191,20 +191,6 @@ PlayerTab:AddSlider({
 	end    
 })
 
-PlayerTab:AddSlider({
-	Name = "HipHeight",
-	Min = 0,
-	Max = 500,
-	Default = 0,
-	Color = Color3.fromRGB(255,255,255),
-	Increment = 1,
-	ValueName = "HipHeight",
-	Callback = function(Value)
-		Player.Character.Humanoid.HipHeight = Value
-        ClickSound:Play()
-	end    
-})
-
 --[[
 Name = <string> - The name of the slider.
 Min = <number> - The minimal value of the slider.

@@ -21,6 +21,7 @@ ClickSound.SoundId = "rbxassetid://9119056442"
 ClickSound.PlaybackSpeed = 1
 
 local Player = game.Players.LocalPlayer
+
 local wsbool = false
 local jpbool = false
 local hhbool = false
@@ -56,10 +57,10 @@ local ScriptsTab = Window:MakeTab({
 })
 
 VisualTab:AddToggle({
-	Name = "3D Rendering Enabled",
-	Default = true,
+	Name = "3D Rendering Disabled",
+	Default = false,
 	Callback = function(Value)
-		game:GetService("RunService"):Set3dRenderingEnabled(Value)
+		game:GetService("RunService"):Set3dRenderingEnabled(not Value)
         ClickSound:Play()
 	end    
 })
@@ -100,7 +101,35 @@ MiscTab:AddButton({
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/unified-naming-convention/NamingStandard/main/UNCCheckEnv.lua", true))()
         OrionLib:MakeNotification({
             Name = "BloopUI",
-            Content = "UNC Test Loaded!!",
+            Content = "UNC Test Loaded!! (Check console)",
+            Image = "rbxassetid://4483345998",
+            Time = 5,
+            NotifSound:Play()
+        })
+  	end    
+})
+
+MiscTab:AddButton({
+	Name = "Anti-AFK",
+	Callback = function()
+		loadstring(game:HttpGet('https://raw.githubusercontent.com/haahaaaaa/orion/refs/heads/main/antiafk.lua'))()
+        OrionLib:MakeNotification({
+            Name = "BloopUI",
+            Content = "Anti-AFK script loaded",
+            Image = "rbxassetid://4483345998",
+            Time = 5,
+            NotifSound:Play()
+        })
+  	end    
+})
+
+MiscTab:AddButton({
+	Name = "Level test",
+	Callback = function()
+		printidentity()
+        OrionLib:MakeNotification({
+            Name = "BloopUI",
+            Content = "Printed level (check console)",
             Image = "rbxassetid://4483345998",
             Time = 5,
             NotifSound:Play()
@@ -194,20 +223,6 @@ ScriptsTab:AddButton({
 })
 
 ScriptsTab:AddButton({
-	Name = "Anti-AFK",
-	Callback = function()
-		loadstring(game:HttpGet('https://raw.githubusercontent.com/haahaaaaa/orion/refs/heads/main/antiafk.lua'))()
-        OrionLib:MakeNotification({
-            Name = "BloopUI",
-            Content = "Anti-AFK script loaded",
-            Image = "rbxassetid://4483345998",
-            Time = 5,
-            NotifSound:Play()
-        })
-  	end    
-})
-
-ScriptsTab:AddButton({
 	Name = "Vertex MM2 Hub",
 	Callback = function()
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/vertex-peak/vertex/refs/heads/main/loadstring"))()
@@ -227,7 +242,7 @@ ScriptsTab:AddButton({
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/xVicity/GLACIER/main/LATEST.lua"))()
         OrionLib:MakeNotification({
             Name = "BloopUI",
-            Content = "Vertex MM2 script loaded",
+            Content = "Glacier hub script loaded",
             Image = "rbxassetid://4483345998",
             Time = 5,
             NotifSound:Play()
@@ -241,7 +256,7 @@ ScriptsTab:AddButton({
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/MaxicsSoft/XyrezAutoRank/main/StealTimeFromOthers.lua"))()
         OrionLib:MakeNotification({
             Name = "BloopUI",
-            Content = "Vertex MM2 script loaded",
+            Content = "STFO script loaded",
             Image = "rbxassetid://4483345998",
             Time = 5,
             NotifSound:Play()
@@ -255,7 +270,21 @@ ScriptsTab:AddButton({
 		loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/richie0866/orca/master/public/latest.lua"))()
         OrionLib:MakeNotification({
             Name = "BloopUI",
-            Content = "Vertex MM2 script loaded",
+            Content = "Orca hub script loaded",
+            Image = "rbxassetid://4483345998",
+            Time = 5,
+            NotifSound:Play()
+        })
+  	end    
+})
+
+ScriptsTab:AddButton({
+	Name = "Dandys World script",
+	Callback = function()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/haahaaaaa/orion/refs/heads/main/dw%20script.lua"))()
+        OrionLib:MakeNotification({
+            Name = "BloopUI",
+            Content = "Dandys world script loaded",
             Image = "rbxassetid://4483345998",
             Time = 5,
             NotifSound:Play()

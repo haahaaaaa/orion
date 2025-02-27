@@ -197,7 +197,7 @@ ScriptsTab:AddButton({
 ScriptsTab:AddButton({
 	Name = "Universal hitbox extender, aimbot",
 	Callback = function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/Systemsdey23/bloop/refs/heads/main/Loader.lua"))()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/haahaaaaa/orion/refs/heads/main/hitbox.lua"))()
         OrionLib:MakeNotification({
             Name = "BloopUI",
             Content = "Universal script loaded",

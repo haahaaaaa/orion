@@ -82,6 +82,20 @@ MiscTab:AddButton({
 })
 
 MiscTab:AddButton({
+	Name = "Dex Explorer",
+	Callback = function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/infyiff/backup/main/dex.lua"))()
+        OrionLib:MakeNotification({
+            Name = "BloopUI",
+            Content = "Dex Explorer loaded",
+            Image = "rbxassetid://4483345998",
+            Time = 5,
+            NotifSound:Play()
+        })
+  	end    
+})
+
+MiscTab:AddButton({
 	Name = "FE Animation GUI (R6)",
 	Callback = function()
         loadstring(game:HttpGet("https://gist.githubusercontent.com/MelonsStuff/f018928d2f010789a150b4924e279b16/raw/8de399eb9cbccbde430fcd37270cd4ff171f8b8e/AnimationGUI.txt"))()

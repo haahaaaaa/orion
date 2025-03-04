@@ -306,6 +306,20 @@ ScriptsTab:AddButton({
   	end    
 })
 
+ScriptsTab:AddButton({
+	Name = "Spelling bee script",
+	Callback = function()
+	https://raw.githubusercontent.com/haahaaaaa/orion/refs/heads/main/spelling%20bee%20script.lua
+        OrionLib:MakeNotification({
+            Name = "BloopUI",
+            Content = "Spelling bee script loaded",
+            Image = "rbxassetid://4483345998",
+            Time = 5,
+            NotifSound:Play()
+        })
+  	end    
+})
+
 PlayerTab:AddToggle({
 	Name = "Walkspeed",
 	Default = false,

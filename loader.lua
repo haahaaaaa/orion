@@ -1,4 +1,4 @@
-local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/haahaaaaa/orion/refs/heads/main/mainlib.lua'))()
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/haahaaaaa/orion/refs/heads/main/mainlib.lua')))()
 local Window = OrionLib:MakeWindow({Name = "BloopUI 🌠", HidePremium = false, IntroText = "Welcome! :D", SaveConfig = true, ConfigFolder = "BloopUI"})
 --[[
 Name = <string> - The name of the UI.
@@ -309,7 +309,7 @@ ScriptsTab:AddButton({
 ScriptsTab:AddButton({
 	Name = "Spelling bee script",
 	Callback = function()
-	https://raw.githubusercontent.com/haahaaaaa/orion/refs/heads/main/spelling%20bee%20script.lua
+	loadstring(game:HttpGet('https://raw.githubusercontent.com/haahaaaaa/orion/refs/heads/main/spelling%20bee%20script.lua'))()
         OrionLib:MakeNotification({
             Name = "BloopUI",
             Content = "Spelling bee script loaded",
@@ -449,6 +449,3 @@ Time = <number> - The duration of the notfication.
 
 
 OrionLib:Init()
-
-
-

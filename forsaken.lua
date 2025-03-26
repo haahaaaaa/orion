@@ -215,10 +215,12 @@ local function esp()
     end
 
     for i, v in ipairs(ragdolls:GetChildren()) do
-        if v.Head:FindFirstChild("ESPNEW") then
-            v.Head:FindFirstChild("ESPNEW"):Destroy()
-            v.Head:FindFirstChild("ESPHP"):Destroy()
-        end
+	if v:FindFirstChild("Head") then
+            if v.Head:FindFirstChild("ESPNEW") then
+               v.Head:FindFirstChild("ESPNEW"):Destroy()
+               v.Head:FindFirstChild("ESPHP"):Destroy()
+           end
+	end
     end
 
     lighting.Brightness = 2

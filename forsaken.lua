@@ -1,3 +1,13 @@
+if game.PlaceId not == 18687417158 then 
+	game:GetService("StarterGui"):SetCore("SendNotification",{
+	Title = "Forsaken ESP", -- Required
+	Text = "You aren't in Forsaken.", -- Required
+	Icon = "rbxassetid://121488301096085" -- Optional
+})
+    return 
+end
+
+
 local killers = workspace:FindFirstChild("Players"):FindFirstChild("Killers")
 local survivors = workspace:FindFirstChild("Players"):FindFirstChild("Survivors")
 local ragdolls = workspace:FindFirstChild("Ragdolls")

@@ -8,7 +8,7 @@ local runservice = game:GetService("RunService")
 game:GetService("StarterGui"):SetCore("SendNotification",{
 	Title = "Forsaken ESP", -- Required
 	Text = "by ObstructionXD :3", -- Required
-	Icon = "rbxassetid://1234567890" -- Optional
+	Icon = "rbxassetid://121488301096085" -- Optional
 })
 
 print("Forsaken Script Loaded!!")
@@ -26,6 +26,7 @@ local function esp()
         highlight.Name = "ESPNEW"
         highlight.Parent = v
         highlight.FillColor = Color3.fromRGB(255, 0, 0)
+        highlight.OutlineTransparency = 1
 
         local billboard = Instance.new("BillboardGui")
         billboard.AlwaysOnTop = true
@@ -80,6 +81,7 @@ local function esp()
         highlight.Name = "ESPNEW"
         highlight.Parent = v
         highlight.FillColor = Color3.fromRGB(200, 200, 200)
+        highlight.OutlineTransparency = 1
 
         local billboard = Instance.new("BillboardGui")
         billboard.Name = "ESPNEW"
@@ -134,6 +136,7 @@ local function esp()
             highlight.FillColor = Color3.fromRGB(0, 0, 255)
             highlight.Parent = v
             highlight.Name = "ESPNEW"
+            highlight.OutlineTransparency = 1
 
             local billboard = Instance.new("BillboardGui")
             billboard.Name = "ESPNEW"
@@ -175,6 +178,7 @@ local function esp()
             highlight.FillColor = Color3.fromRGB(255, 255, 0)
             highlight.Parent = v.Instances.Generator
             highlight.Name = "ESPNEW"
+            highlight.OutlineTransparency = 1
 
             local billboard = Instance.new("BillboardGui")
             billboard.Name = "ESPNEWB"

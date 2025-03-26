@@ -1,10 +1,16 @@
-if not game.PlaceId == 18687417158 then 
-	game:GetService("StarterGui"):SetCore("SendNotification",{
+if game.PlaceId == 18687417158 then
+    game:GetService("StarterGui"):SetCore("SendNotification",{
 	Title = "Forsaken ESP", -- Required
-	Text = "You aren't in Forsaken.", -- Required
+	Text = "by ObstructionXD :3", -- Required
 	Icon = "rbxassetid://121488301096085" -- Optional
-})
-    return 
+    })
+else
+    game:GetService("StarterGui"):SetCore("SendNotification",{
+	    Title = "Forsaken ESP", -- Required
+	    Text = "You are not in forsaken", -- Required
+	    Icon = "rbxassetid://121488301096085" -- Optional
+    })
+    return
 end
 
 
@@ -15,12 +21,6 @@ local map = workspace:FindFirstChild("Map").Ingame
 
 local lighting = game:GetService("Lighting")
 local runservice = game:GetService("RunService")
-
-game:GetService("StarterGui"):SetCore("SendNotification",{
-	Title = "Forsaken ESP", -- Required
-	Text = "by ObstructionXD :3", -- Required
-	Icon = "rbxassetid://121488301096085" -- Optional
-})
 
 print("Forsaken Script Loaded!!")
 

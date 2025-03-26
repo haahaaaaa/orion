@@ -2,13 +2,13 @@ if game.PlaceId == 18687417158 then
     game:GetService("StarterGui"):SetCore("SendNotification",{
 	Title = "Forsaken ESP", -- Required
 	Text = "by ObstructionXD :3", -- Required
-	Icon = "rbxassetid://121488301096085" -- Optional
+	Icon = "rbxassetid://133992837986106" -- Optional
     })
 else
     game:GetService("StarterGui"):SetCore("SendNotification",{
 	    Title = "Forsaken ESP", -- Required
 	    Text = "You are not in forsaken", -- Required
-	    Icon = "rbxassetid://121488301096085" -- Optional
+	    Icon = "rbxassetid://133992837986106" -- Optional
     })
     return
 end

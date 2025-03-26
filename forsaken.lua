@@ -19,7 +19,7 @@ local survivors = workspace:FindFirstChild("Players"):FindFirstChild("Survivors"
 local ragdolls = workspace:FindFirstChild("Ragdolls")
 local map = workspace:FindFirstChild("Map").Ingame
 
-local Lighting = game:GetService("Lighting")
+local lighting = game:GetService("Lighting")
 local runservice = game:GetService("RunService")
 
 print("Forsaken Script Loaded!!")
@@ -221,14 +221,14 @@ local function esp()
         end
     end
 
-    Lighting.Brightness = 2
-    Lighting.ClockTime = 14
-    Lighting.FogEnd = 100000
-    Lighting.GlobalShadows = false
-    Lighting.OutdoorAmbient = Color3.fromRGB(128, 128, 128)
+    lighting.Brightness = 2
+    lighting.ClockTime = 14
+    lighting.FogEnd = 100000
+    lighting.GlobalShadows = false
+    lighting.OutdoorAmbient = Color3.fromRGB(128, 128, 128)
 
-    Lighting.FogEnd = 100000
-    for i,v in pairs(Lighting:GetDescendants()) do
+    lighting.FogEnd = 100000
+    for i,v in pairs(lighting:GetDescendants()) do
 	if v:IsA("Atmosphere") then
 		v:Destroy()
 	end

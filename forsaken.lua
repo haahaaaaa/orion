@@ -220,6 +220,19 @@ local function esp()
             v.Head:FindFirstChild("ESPHP"):Destroy()
         end
     end
+
+    Lighting.Brightness = 2
+    Lighting.ClockTime = 14
+    Lighting.FogEnd = 100000
+    Lighting.GlobalShadows = false
+    Lighting.OutdoorAmbient = Color3.fromRGB(128, 128, 128)
+
+    Lighting.FogEnd = 100000
+    for i,v in pairs(Lighting:GetDescendants()) do
+	if v:IsA("Atmosphere") then
+		v:Destroy()
+	end
+    end
 end
 
 runservice.Heartbeat:Connect(function()

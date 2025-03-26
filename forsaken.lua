@@ -1,4 +1,4 @@
-if game.PlaceId not == 18687417158 then 
+if not game.PlaceId == 18687417158 then 
 	game:GetService("StarterGui"):SetCore("SendNotification",{
 	Title = "Forsaken ESP", -- Required
 	Text = "You aren't in Forsaken.", -- Required

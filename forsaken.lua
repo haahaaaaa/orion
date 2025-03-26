@@ -3,6 +3,7 @@ local survivors = workspace:FindFirstChild("Players"):FindFirstChild("Survivors"
 local ragdolls = workspace:FindFirstChild("Ragdolls")
 local map = workspace:FindFirstChild("Map").Ingame
 
+local lighting = game:GetService("Lighting")
 local runservice = game:GetService("RunService")
 
 game:GetService("StarterGui"):SetCore("SendNotification",{

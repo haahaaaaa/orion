@@ -1,5 +1,3 @@
--- Code by me!!
-
 local killers = workspace:FindFirstChild("Players"):FindFirstChild("Killers")
 local survivors = workspace:FindFirstChild("Players"):FindFirstChild("Survivors")
 local ragdolls = workspace:FindFirstChild("Ragdolls")
@@ -163,10 +161,6 @@ local function esp()
     for i, v in ipairs(map.Map:GetChildren()) do
         if v:IsA("Model") and v.Name == "Generator" then
             if v.Instances.Generator:FindFirstChild("ESPNEW") then 
-                if v:FindFirstChild("Progress") == 100 then
-                    v.Instances.Generator.ESPNEW:Destroy()
-                    v.Instances.Generator.ESPNEWB:Destroy()
-                end
                 continue
             end
 

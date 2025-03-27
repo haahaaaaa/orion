@@ -1,12 +1,12 @@
 if game.PlaceId == 18687417158 then
     game:GetService("StarterGui"):SetCore("SendNotification",{
-	Title = "Forsaken ESP", -- Required
+	Title = "Forsaken Script", -- Required
 	Text = "by ObstructionXD :3", -- Required
 	Icon = "rbxassetid://133992837986106" -- Optional
     })
 else
     game:GetService("StarterGui"):SetCore("SendNotification",{
-	    Title = "Forsaken ESP", -- Required
+	    Title = "Forsaken Script", -- Required
 	    Text = "You are not in forsaken", -- Required
 	    Icon = "rbxassetid://133992837986106" -- Optional
     })
@@ -178,11 +178,9 @@ local function esp()
                 continue
             end
 
-            if v:FindFirstChild("Progress") == 100 then
-                v.Instances.Generator.ESPNEW:Destroy()
-                v.Instances.Generator.ESPNEWB:Destroy()
-
-                continue
+            if v:FindFirstChild("Progress").Value == 100 then
+                v.Instances.Generator:FindFirstChild("ESPNEW").Enabled = false
+                v.Instances.Generator:FindFirstChild("ESPNEWB").Enabled = false
             end
 
             local highlight = Instance.new("Highlight")
@@ -215,12 +213,12 @@ local function esp()
     end
 
     for i, v in ipairs(ragdolls:GetChildren()) do
-	if v:FindFirstChild("Head") then
+	    if v:FindFirstChild("Head") then
             if v.Head:FindFirstChild("ESPNEW") then
                v.Head:FindFirstChild("ESPNEW"):Destroy()
                v.Head:FindFirstChild("ESPHP"):Destroy()
            end
-	end
+	    end
     end
 
     lighting.Brightness = 2
@@ -231,12 +229,27 @@ local function esp()
 
     lighting.FogEnd = 100000
     for i,v in pairs(lighting:GetDescendants()) do
-	if v:IsA("Atmosphere") then
-		v:Destroy()
-	end
+	    if v:IsA("Atmosphere") then
+		    v:Destroy()
+	    end
+    end
+end
+
+local function deathcheck()
+    for i, v in ipairs(survivors:GetChildren()) do
+        if v:FindFirstChild("Humanoid") then
+            v:FindFirstChild("Humanoid").Died:Connect(function()
+                game:GetService("StarterGui"):SetCore("SendNotification",{
+	                Title = "Forsaken Script", -- Required
+	                Text = v.Name.. " has died.", -- Required
+	                Icon = "rbxassetid://133992837986106" -- Optional
+                })
+            end)
+        end
     end
 end
 
 runservice.Heartbeat:Connect(function()
     esp()
+    deathcheck()
 end)

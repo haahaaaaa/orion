@@ -178,13 +178,6 @@ local function esp()
                 continue
             end
 
-            pcall(function()
-                if v:FindFirstChild("Progress").Value == 100 then
-                    v.Instances.Generator:FindFirstChild("ESPNEW").Enabled = false
-                    v.Instances.Generator:FindFirstChild("ESPNEWB").Enabled = false
-                end
-            end)
-
             local highlight = Instance.new("Highlight")
             highlight.FillColor = Color3.fromRGB(255, 255, 0)
             highlight.Parent = v.Instances.Generator
@@ -211,6 +204,13 @@ local function esp()
             local stroke = Instance.new("UIStroke")
             stroke.Thickness = 2
             stroke.Parent = text
+
+            pcall(function()
+                if v:FindFirstChild("Progress").Value == 100 then
+                    v.Instances.Generator:FindFirstChild("ESPNEW").Enabled = false
+                    v.Instances.Generator:FindFirstChild("ESPNEWB").Enabled = false
+                end
+            end)
         end
     end
 
@@ -240,6 +240,7 @@ end
 local function deathcheck()
     for i, v in ipairs(survivors:GetChildren()) do
         if v:FindFirstChild("Humanoid") then
+            if v:FindFirstChild("Humanoid").Health == 0 then return end
             v:FindFirstChild("Humanoid").Died:Once(function()
                 game:GetService("StarterGui"):SetCore("SendNotification",{
 	                Title = "Forsaken Script", -- Required

@@ -1,3 +1,4 @@
+pcall(function()
 if game.PlaceId == 18687417158 then
     game:GetService("StarterGui"):SetCore("SendNotification",{
 	Title = "Forsaken Script", -- Required
@@ -238,7 +239,7 @@ end
 local function deathcheck()
     for i, v in ipairs(survivors:GetChildren()) do
         if v:FindFirstChild("Humanoid") then
-            v:FindFirstChild("Humanoid").Died:Connect(function()
+            v:FindFirstChild("Humanoid").Died:Once(function()
                 game:GetService("StarterGui"):SetCore("SendNotification",{
 	                Title = "Forsaken Script", -- Required
 	                Text = v.Name.. " has died.", -- Required
@@ -252,4 +253,5 @@ end
 runservice.Heartbeat:Connect(function()
     esp()
     deathcheck()
+end)
 end)

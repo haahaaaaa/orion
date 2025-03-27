@@ -172,7 +172,7 @@ local function esp()
             stroke.Parent = text
         end
     end
-
+    pcall(function()
     for i, v in ipairs(map.Map:GetChildren()) do
         if v:IsA("Model") and v.Name == "Generator" then
             if v.Instances.Generator:FindFirstChild("ESPNEW") then 
@@ -214,6 +214,7 @@ local function esp()
             end)
         end
     end
+    end)
 
     for i, v in ipairs(ragdolls:GetChildren()) do
 	    if v:FindFirstChild("Head") then

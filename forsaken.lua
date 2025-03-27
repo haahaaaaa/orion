@@ -247,12 +247,14 @@ local function esp()
 end
 
 local function deathlog(plr)
-    plr.Character:FindFirstChild("Humanoid").Died:Connect(function()
-        game:GetService("StarterGui"):SetCore("SendNotification",{
-	        Title = "Forsaken Script", -- Required
-	        Text = plr.Character.Name.. " has died.", -- Required
-	        Icon = "rbxassetid://133992837986106" -- Optional
-        })
+    pcall(function()
+        plr.Character:FindFirstChild("Humanoid").Died:Connect(function()
+            game:GetService("StarterGui"):SetCore("SendNotification",{
+	            Title = "Forsaken Script", -- Required
+	            Text = plr.Character.Name.. " (@"..players:GetPlayerFromCharacter(plr.Character).Name..") has died.", -- Required
+	            Icon = "rbxassetid://133992837986106" -- Optional
+            })
+        end)
     end)
 end
 

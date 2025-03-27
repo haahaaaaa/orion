@@ -1,4 +1,3 @@
-pcall(function()
 if game.PlaceId == 18687417158 then
     game:GetService("StarterGui"):SetCore("SendNotification",{
 	Title = "Forsaken Script", -- Required
@@ -179,10 +178,12 @@ local function esp()
                 continue
             end
 
-            if v:FindFirstChild("Progress").Value == 100 then
-                v.Instances.Generator:FindFirstChild("ESPNEW").Enabled = false
-                v.Instances.Generator:FindFirstChild("ESPNEWB").Enabled = false
-            end
+            pcall(function()
+                if v:FindFirstChild("Progress").Value == 100 then
+                    v.Instances.Generator:FindFirstChild("ESPNEW").Enabled = false
+                    v.Instances.Generator:FindFirstChild("ESPNEWB").Enabled = false
+                end
+            end)
 
             local highlight = Instance.new("Highlight")
             highlight.FillColor = Color3.fromRGB(255, 255, 0)
@@ -253,5 +254,4 @@ end
 runservice.Heartbeat:Connect(function()
     esp()
     deathcheck()
-end)
 end)

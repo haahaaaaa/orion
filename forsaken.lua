@@ -21,6 +21,7 @@ local map = workspace:FindFirstChild("Map").Ingame
 
 local lighting = game:GetService("Lighting")
 local runservice = game:GetService("RunService")
+local players = game:GetService("Players")
 
 print("Forsaken Script Loaded!!")
 
@@ -237,22 +238,24 @@ local function esp()
     end
 end
 
-local function deathcheck()
-    for i, v in ipairs(survivors:GetChildren()) do
-        if v:FindFirstChild("Humanoid") then
-            if v:FindFirstChild("Humanoid").Health == 0 then return end
-            v:FindFirstChild("Humanoid").Died:Once(function()
-                game:GetService("StarterGui"):SetCore("SendNotification",{
-	                Title = "Forsaken Script", -- Required
-	                Text = v.Name.. " has died.", -- Required
-	                Icon = "rbxassetid://133992837986106" -- Optional
-                })
-            end)
-        end
+local function deathcheck(plr)
+    if plr.Character:FindFirstChild("Humanoid"):GetState() == Enum.HumanoidStateType.Dead then
+        game:GetService("StarterGui"):SetCore("SendNotification",{
+	        Title = "Forsaken Script", -- Required
+	        Text = plr.Character.Name.. " has died.", -- Required
+	        Icon = "rbxassetid://133992837986106" -- Optional
+        })
     end
 end
 
-runservice.Heartbeat:Connect(function()
-    esp()
-    deathcheck()
+runservice.RenderStepped:Connect(esp)
+
+for i, plr in ipairs(players:GetPlayers()) do
+    deathcheck(plr)
+end
+
+players.PlayerAdded:Connect(function(plr)
+    plr.CharacterAdded:Wait()
+
+    deathcheck(plr)
 end)

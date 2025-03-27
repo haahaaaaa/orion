@@ -52,7 +52,7 @@ local function esp()
         text.BackgroundTransparency = 1
         text.TextColor3 = Color3.fromRGB(255, 50, 50)
         text.TextScaled = true
-        text.Font = Enum.Font.Antique
+        text.Font = Enum.Font.Fantasy
         text.TextStrokeTransparency = 1
         text.Parent = billboard
 
@@ -69,7 +69,7 @@ local function esp()
         hpt.BackgroundTransparency = 1
         hpt.TextColor3 = Color3.fromRGB(255, 50, 50)
         hpt.TextScaled = true
-        hpt.Font = Enum.Font.Antique
+        hpt.Font = Enum.Font.Fantasy
         hpt.TextStrokeTransparency = 1
         hpt.Parent = hpb
 
@@ -108,7 +108,7 @@ local function esp()
         text.BackgroundTransparency = 1
         text.TextColor3 = Color3.fromRGB(200, 200, 200)
         text.TextScaled = true
-        text.Font = Enum.Font.Antique
+        text.Font = Enum.Font.Fantasy
         text.TextStrokeTransparency = 1
         text.Parent = billboard
 
@@ -125,7 +125,7 @@ local function esp()
         hpt.BackgroundTransparency = 1
         hpt.TextColor3 = Color3.fromRGB(200, 200, 200)
         hpt.TextScaled = true
-        hpt.Font = Enum.Font.Antique
+        hpt.Font = Enum.Font.Fantasy
         hpt.TextStrokeTransparency = 1
         hpt.Parent = hpb
 
@@ -163,7 +163,7 @@ local function esp()
             text.BackgroundTransparency = 1
             text.TextColor3 = Color3.fromRGB(0, 0, 255)
             text.TextScaled = true
-            text.Font = Enum.Font.Antique
+            text.Font = Enum.Font.Fantasy
             text.TextStrokeTransparency = 1
             text.Parent = billboard
 
@@ -212,7 +212,7 @@ local function esp()
             text.BackgroundTransparency = 1
             text.TextColor3 = Color3.fromRGB(255, 255, 0)
             text.TextScaled = true
-            text.Font = Enum.Font.Antique
+            text.Font = Enum.Font.Fantasy
             text.TextStrokeTransparency = 1
             text.Parent = billboard
 

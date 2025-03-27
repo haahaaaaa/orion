@@ -1,3 +1,4 @@
+pcall(function()
 if game.PlaceId == 18687417158 then
     game:GetService("StarterGui"):SetCore("SendNotification",{
 	Title = "Forsaken Script", -- Required
@@ -172,12 +173,18 @@ local function esp()
             stroke.Parent = text
         end
     end
-    pcall(function()
     for i, v in ipairs(map.Map:GetChildren()) do
         if v:IsA("Model") and v.Name == "Generator" then
             if v.Instances.Generator:FindFirstChild("ESPNEW") then 
                 continue
             end
+
+            pcall(function()
+                if v:FindFirstChild("Progress").Value == 100 then
+                    v.Instances.Generator:FindFirstChild("ESPNEW").Enabled = false
+                    v.Instances.Generator:FindFirstChild("ESPNEWB").Enabled = false
+                end
+            end)
 
             local highlight = Instance.new("Highlight")
             highlight.FillColor = Color3.fromRGB(255, 255, 0)
@@ -205,16 +212,8 @@ local function esp()
             local stroke = Instance.new("UIStroke")
             stroke.Thickness = 2
             stroke.Parent = text
-
-            pcall(function()
-                if v:FindFirstChild("Progress").Value == 100 then
-                    v.Instances.Generator:FindFirstChild("ESPNEW").Enabled = false
-                    v.Instances.Generator:FindFirstChild("ESPNEWB").Enabled = false
-                end
-            end)
         end
     end
-    end)
 
     for i, v in ipairs(ragdolls:GetChildren()) do
 	    if v:FindFirstChild("Head") then
@@ -232,7 +231,7 @@ local function esp()
     lighting.OutdoorAmbient = Color3.fromRGB(128, 128, 128)
 
     lighting.FogEnd = 100000
-    for i,v in pairs(lighting:GetDescendants()) do
+    for i,v in ipairs(lighting:GetDescendants()) do
 	    if v:IsA("Atmosphere") then
 		    v:Destroy()
 	    end
@@ -259,4 +258,5 @@ players.PlayerAdded:Connect(function(plr)
     plr.CharacterAdded:Wait()
 
     deathcheck(plr)
+end)
 end)

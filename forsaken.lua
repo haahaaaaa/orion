@@ -1,4 +1,3 @@
-pcall(function()
 if game.PlaceId == 18687417158 then
     game:GetService("StarterGui"):SetCore("SendNotification",{
 	Title = "Forsaken Script", -- Required
@@ -173,18 +172,26 @@ local function esp()
             stroke.Parent = text
         end
     end
-    for i, v in ipairs(map.Map:GetChildren()) do
+    
+    if map:FindFirstChild("Map") then
+        for i, v in ipairs(map.Map:GetChildren()) do
         if v:IsA("Model") and v.Name == "Generator" then
             if v.Instances.Generator:FindFirstChild("ESPNEW") then 
+                pcall(function()
+                    if v:FindFirstChild("Progress").Value == 100 then
+                        v.Instances.Generator:FindFirstChild("ESPNEW").Enabled = false
+                        v.Instances.Generator:FindFirstChild("ESPNEWB").Enabled = false
+                    end
+                end)
                 continue
             end
 
-            pcall(function()
-                if v:FindFirstChild("Progress").Value == 100 then
-                    v.Instances.Generator:FindFirstChild("ESPNEW").Enabled = false
-                    v.Instances.Generator:FindFirstChild("ESPNEWB").Enabled = false
-                end
-            end)
+                pcall(function()
+                    if v:FindFirstChild("Progress").Value == 100 then
+                        v.Instances.Generator:FindFirstChild("ESPNEW").Enabled = false
+                        v.Instances.Generator:FindFirstChild("ESPNEWB").Enabled = false
+                    end
+                end)
 
             local highlight = Instance.new("Highlight")
             highlight.FillColor = Color3.fromRGB(255, 255, 0)
@@ -214,6 +221,7 @@ local function esp()
             stroke.Parent = text
         end
     end
+    end
 
     for i, v in ipairs(ragdolls:GetChildren()) do
 	    if v:FindFirstChild("Head") then
@@ -238,25 +246,31 @@ local function esp()
     end
 end
 
-local function deathcheck(plr)
-    if plr.Character:FindFirstChild("Humanoid"):GetState() == Enum.HumanoidStateType.Dead then
+local function deathlog(plr)
+    plr.Character:FindFirstChild("Humanoid").Died:Connect(function()
         game:GetService("StarterGui"):SetCore("SendNotification",{
 	        Title = "Forsaken Script", -- Required
 	        Text = plr.Character.Name.. " has died.", -- Required
 	        Icon = "rbxassetid://133992837986106" -- Optional
         })
-    end
+    end)
 end
 
-runservice.RenderStepped:Connect(esp)
+for i, v in ipairs(players:GetPlayers()) do
+    deathlog(v)
 
-for i, plr in ipairs(players:GetPlayers()) do
-    deathcheck(plr)
+    v.CharacterAdded:Connect(function()
+        deathlog(v)
+    end)
 end
 
 players.PlayerAdded:Connect(function(plr)
     plr.CharacterAdded:Wait()
+    deathlog(plr)
 
-    deathcheck(plr)
+    plr.CharacterAdded:Connect(function()
+        deathlog(plr)
+    end)
 end)
-end)
+
+runservice.RenderStepped:Connect(esp)

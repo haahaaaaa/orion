@@ -1,13 +1,13 @@
 if game.PlaceId == 18687417158 then
     game:GetService("StarterGui"):SetCore("SendNotification",{
 	Title = "Forsaken Script", -- Required
-	Text = "Thanks for using my script!", -- Required
+	Text = "Script by obstruction_ on discord (me)", -- Required
 	Icon = "rbxassetid://133992837986106" -- Optional
     })
 else
     game:GetService("StarterGui"):SetCore("SendNotification",{
 	    Title = "Forsaken Script", -- Required
-	    Text = "You are not in forsaken", -- Required
+	    Text = "You are not in forsaken..", -- Required
 	    Icon = "rbxassetid://133992837986106" -- Optional
     })
     return

@@ -44,7 +44,7 @@ local function esp()
         billboard.AlwaysOnTop = true
         billboard.Size = UDim2.new(5, 0, 3, 0)
         billboard.StudsOffset = Vector3.new(0, -2, 0)
-        billboard.Parent = v:FindFirstChild("HumanoidRootPart")
+        billboard.Parent = v:FindFirstChild("Torso")
 
         local text = Instance.new("TextLabel")
         text.Text = v.Name
@@ -61,7 +61,7 @@ local function esp()
         hpb.AlwaysOnTop = true
         hpb.Size = UDim2.new(5, 0, 3, 0)
         hpb.StudsOffset = Vector3.new(0, -3.5, 0)
-        hpb.Parent = v:FindFirstChild("HumanoidRootPart")
+        hpb.Parent = v:FindFirstChild("Torso")
 
         local hpt = Instance.new("TextLabel")
         hpt.Text = tostring(math.round(v:WaitForChild("Humanoid").Health)).. "/".. tostring(v:FindFirstChild("Humanoid").MaxHealth)
@@ -102,7 +102,7 @@ local function esp()
         billboard.AlwaysOnTop = true
         billboard.Size = UDim2.new(5, 0, 3, 0)
         billboard.StudsOffset = Vector3.new(0, -2, 0)
-        billboard.Parent = v:FindFirstChild("HumanoidRootPart")
+        billboard.Parent = v:FindFirstChild("Torso")
 
         local text = Instance.new("TextLabel")
         text.Text = v.Name
@@ -119,7 +119,7 @@ local function esp()
         hpb.AlwaysOnTop = true
         hpb.Size = UDim2.new(5, 0, 3, 0)
         hpb.StudsOffset = Vector3.new(0, -3.5, 0)
-        hpb.Parent = v:FindFirstChild("HumanoidRootPart")
+        hpb.Parent = v:FindFirstChild("Torso")
 
         local hpt = Instance.new("TextLabel")
         hpt.Text = tostring(math.round(v:WaitForChild("Humanoid").Health)).. "/".. tostring(v:FindFirstChild("Humanoid").MaxHealth)
@@ -174,6 +174,7 @@ local function esp()
             local stroke = Instance.new("UIStroke")
             stroke.Thickness = 2
             stroke.Parent = text
+	    stroke.Color = Color3.fromRGB(255, 255, 255)
         end
     end
     

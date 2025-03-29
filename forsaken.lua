@@ -76,10 +76,12 @@ local function esp()
         local stroke2 = Instance.new("UIStroke")
         stroke2.Thickness = 2
         stroke2.Parent = hpt
+	stroke2.Color = Color3.fromRGB(255, 255, 255)
 
         local stroke = Instance.new("UIStroke")
         stroke.Thickness = 2
         stroke.Parent = text
+	stroke.Color = Color3.fromRGB(255, 255, 255)
     end
     for i, v in ipairs(survivors:GetChildren()) do
         if v:FindFirstChild("ESPNEW") then 
@@ -132,10 +134,12 @@ local function esp()
         local stroke2 = Instance.new("UIStroke")
         stroke2.Thickness = 2
         stroke2.Parent = hpt
+	stroke2.Color = Color3.fromRGB(255, 255, 255)
 
         local stroke = Instance.new("UIStroke")
         stroke.Thickness = 2
         stroke.Parent = text
+	stroke.Color = Color3.fromRGB(255, 255, 255)
     end
 
     for i, v in ipairs(map:GetChildren()) do
@@ -219,6 +223,7 @@ local function esp()
             local stroke = Instance.new("UIStroke")
             stroke.Thickness = 2
             stroke.Parent = text
+	    stroke.Color = Color3.fromRGB(255, 255, 255)
         end
     end
     end

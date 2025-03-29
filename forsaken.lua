@@ -29,7 +29,7 @@ local function esp()
     for i, v in ipairs(killers:GetChildren()) do
         if v:FindFirstChild("ESPNEW") then 
             pcall(function()
-                v:FindFirstChild("Head").ESPHP:FindFirstChild("TextLabel").Text = tostring(math.round(v:FindFirstChild("Humanoid").Health)).. "/".. tostring(v:FindFirstChild("Humanoid").MaxHealth)
+                v:FindFirstChild("Torso").ESPHP:FindFirstChild("TextLabel").Text = tostring(math.round(v:FindFirstChild("Humanoid").Health)).. "/".. tostring(v:FindFirstChild("Humanoid").MaxHealth)
             end)
             continue
         end
@@ -84,7 +84,7 @@ local function esp()
     for i, v in ipairs(survivors:GetChildren()) do
         if v:FindFirstChild("ESPNEW") then 
             pcall(function()
-                v:FindFirstChild("Head").ESPHP:FindFirstChild("TextLabel").Text = tostring(math.round(v:FindFirstChild("Humanoid").Health)).. "/".. tostring(v:FindFirstChild("Humanoid").MaxHealth)
+                v:FindFirstChild("Torso").ESPHP:FindFirstChild("TextLabel").Text = tostring(math.round(v:FindFirstChild("Humanoid").Health)).. "/".. tostring(v:FindFirstChild("Humanoid").MaxHealth)
             end)
             continue
         end

@@ -45,6 +45,7 @@ local function esp()
         billboard.Size = UDim2.new(5, 0, 3, 0)
         billboard.StudsOffset = Vector3.new(0, -2, 0)
         billboard.Parent = v:FindFirstChild("Torso")
+	billboard.Name = "ESPNEW"
 
         local text = Instance.new("TextLabel")
         text.Text = v.Name

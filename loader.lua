@@ -153,6 +153,20 @@ MiscTab:AddButton({
   	end    
 })
 
+MiscTab:AddButton({
+	Name = "Octo-Spy (RemoteSpy)",
+	Callback = function()
+		loadstring(game:HttpGet('https://raw.githubusercontent.com/InfernusScripts/Octo-Spy/refs/heads/main/Main.lua'))()
+        OrionLib:MakeNotification({
+            Name = "BloopUI",
+            Content = "Loaded Octo-Spy",
+            Image = "rbxassetid://4483345998",
+            Time = 5,
+            NotifSound:Play()
+        })
+  	end    
+})
+
 ScriptsTab:AddButton({
 	Name = "Nivex Hub",
 	Callback = function()

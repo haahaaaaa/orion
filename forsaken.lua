@@ -225,10 +225,10 @@ local function esp()
     end
 
     for i, v in ipairs(ragdolls:GetChildren()) do
-	    if v:FindFirstChild("Head") then
-            if v.Head:FindFirstChild("ESPNEW") then
-               v.Head:FindFirstChild("ESPNEW"):Destroy()
-               v.Head:FindFirstChild("ESPHP"):Destroy()
+	    if v:FindFirstChild("Torso") then
+            if v.Torso:FindFirstChild("ESPNEW") then
+               v.Torso:FindFirstChild("ESPNEW"):Destroy()
+               v.Torso:FindFirstChild("ESPHP"):Destroy()
            end
 	    end
     end

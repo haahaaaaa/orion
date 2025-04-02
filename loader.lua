@@ -14,13 +14,17 @@ Icon = <string> - URL to the image you want displayed on the window.
 CloseCallback = <function> - Function to execute when the window is closed.
 ]]
 
+local sounds = game:GetService("SoundService")
+
 local NotifSound = Instance.new("Sound")
 NotifSound.SoundId = "rbxassetid://1053296915"
 NotifSound.PlaybackSpeed = 1.2
+NotifSound.Parent = sounds
 
 local ClickSound = Instance.new("Sound")
 ClickSound.SoundId = "rbxassetid://9119056442"
 ClickSound.PlaybackSpeed = 1
+NotifSound.Parent = sounds
 
 local Player = game.Players.LocalPlayer
 

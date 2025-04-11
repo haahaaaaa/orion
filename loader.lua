@@ -340,6 +340,20 @@ ScriptsTab:AddButton({
   	end    
 })
 
+ScriptsTab:AddButton({
+	Name = "Forsaken ESP (made by ME)",
+	Callback = function()
+	loadstring(game:HttpGet('https://raw.githubusercontent.com/haahaaaaa/orion/refs/heads/main/forsaken.lua'))()
+        OrionLib:MakeNotification({
+            Name = "BloopUI",
+            Content = "Spelling bee script loaded",
+            Image = "rbxassetid://4483345998",
+            Time = 5,
+            NotifSound:Play()
+        })
+  	end    
+})
+
 PlayerTab:AddToggle({
 	Name = "Walkspeed",
 	Default = false,

@@ -235,7 +235,6 @@ local function Load()
 			Environment.FOVCircle.Radius = Environment.FOVSettings.Amount
 			Environment.FOVCircle.Thickness = Environment.FOVSettings.Thickness
 			Environment.FOVCircle.Filled = Environment.FOVSettings.Filled
-			Environment.FOVCircle.NumSides = Environment.FOVSettings.Sides
 			Environment.FOVCircle.Color = Environment.FOVSettings.Color
 			Environment.FOVCircle.Transparency = Environment.FOVSettings.Transparency
 			Environment.FOVCircle.Visible = Environment.FOVSettings.Visible

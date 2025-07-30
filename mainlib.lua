@@ -28,14 +28,6 @@ local OrionLib = {
 --Feather Icons https://github.com/evoincorp/lucideblox/tree/master/src/modules/util - Created by 7kayoh
 local Icons = {}
 
-local Success, Response = pcall(function()
-	Icons = game:HttpGet("https://raw.githubusercontent.com/haahaaaaa/orion/refs/heads/main/icons.lua"))
-end)
-
-if not Success then
-	warn("\nOrion Library - Failed to load Feather Icons. Error code: " .. Response .. "\n")
-end	
-
 local function GetIcon(IconName)
 	if Icons[IconName] ~= nil then
 		return Icons[IconName]

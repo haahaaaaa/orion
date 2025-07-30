@@ -25,8 +25,7 @@ local OrionLib = {
 	SaveCfg = false
 }
 
-pcall(function()
-		--Feather Icons https://github.com/evoincorp/lucideblox/tree/master/src/modules/util - Created by 7kayoh
+--Feather Icons https://github.com/evoincorp/lucideblox/tree/master/src/modules/util - Created by 7kayoh
 local Icons = {}
 
 local Success, Response = pcall(function()
@@ -1880,7 +1879,6 @@ end
 
 function OrionLib:Destroy()
 	Orion:Destroy()
-end
-end)		
+end	
 
 return OrionLib

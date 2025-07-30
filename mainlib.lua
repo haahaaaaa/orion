@@ -1,4 +1,3 @@
-pcall(function()
 local UserInputService = game:GetService("UserInputService")
 local TweenService = game:GetService("TweenService")
 local RunService = game:GetService("RunService")
@@ -26,7 +25,8 @@ local OrionLib = {
 	SaveCfg = false
 }
 
---Feather Icons https://github.com/evoincorp/lucideblox/tree/master/src/modules/util - Created by 7kayoh
+pcall(function()
+		--Feather Icons https://github.com/evoincorp/lucideblox/tree/master/src/modules/util - Created by 7kayoh
 local Icons = {}
 
 local Success, Response = pcall(function()
@@ -1881,6 +1881,6 @@ end
 function OrionLib:Destroy()
 	Orion:Destroy()
 end
+end)		
 
 return OrionLib
-end)

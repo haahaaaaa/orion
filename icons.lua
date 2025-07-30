@@ -1,6 +1,5 @@
-{
-	icons:{
-				activity = "rbxassetid://7072977617",
+return {
+		activity = "rbxassetid://7072977617",
 		airplay = "rbxassetid://7072977798",
 		["alert-circle"] = "rbxassetid://7072978559",
 		["alert-octagon"] = "rbxassetid://7072978894",
@@ -278,5 +277,4 @@
 		["x-square"] = "rbxassetid://7072725299",
 		["zoom-in"] = "rbxassetid://7072725467",
 		["zoom-out"] = "rbxassetid://7072725530",
-	}
 }

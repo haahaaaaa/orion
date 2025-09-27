@@ -2,17 +2,16 @@ if game.PlaceId == 71895508397153 then
 	game:GetService("StarterGui"):SetCore("SendNotification",{
 		Title = "Die of Death Script", -- Required
 		Text = "Script by obstruction_ on discord (me)", -- Required
-		Icon = "rbxassetid://74173176754230" -- Optional
+		Icon = "rbxassetid://88367294385656" -- Optional
 	})
 else
 	game:GetService("StarterGui"):SetCore("SendNotification",{
 		Title = "Die of Death Script", -- Required
 		Text = "You are not in Die of Death..", -- Required
-		Icon = "rbxassetid://74173176754230" -- Optional
+		Icon = "rbxassetid://88367294385656" -- Optional
 	})
 	return
 end
-
 
 local killers = workspace:FindFirstChild("GameAssets"):FindFirstChild("Teams"):FindFirstChild("Killer")
 local survivors = workspace:FindFirstChild("GameAssets"):FindFirstChild("Teams"):FindFirstChild("Survivor")
@@ -195,7 +194,7 @@ local function deathlog(plr)
 			game:GetService("StarterGui"):SetCore("SendNotification",{
 				Title = "Die of Death Script", -- Required
 				Text = plr.Character.Name.. " (@"..players:GetPlayerFromCharacter(plr.Character).Name..") has died.", -- Required
-				Icon = "rbxassetid://74173176754230" -- Optional
+				Icon = "rbxassetid://88367294385656" -- Optional
 			})
 		end)
 	end)

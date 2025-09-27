@@ -2,21 +2,21 @@ if game.PlaceId == 71895508397153 then
 	game:GetService("StarterGui"):SetCore("SendNotification",{
 		Title = "Die of Death Script", -- Required
 		Text = "Script by obstruction_ on discord (me)", -- Required
-		Icon = "rbxassetid://1108819496302504" -- Optional
+		Icon = "rbxassetid://133992837986106" -- Optional
 	})
 else
 	game:GetService("StarterGui"):SetCore("SendNotification",{
 		Title = "Die of Death Script", -- Required
 		Text = "You are not in Die of Death..", -- Required
-		Icon = "rbxassetid://1108819496302504" -- Optional
+		Icon = "rbxassetid://133992837986106" -- Optional
 	})
 	return
 end
 
 
-local killers = workspace:WaitForChild("GameAssets"):WaitForChild("Teams"):WaitForChild("Killer")
-local survivors = workspace:WaitForChild("GameAssets"):WaitForChild("Teams"):WaitForChild("Survivor")
-local other = workspace:WaitForChild("GameAssets"):WaitForChild("Teams"):WaitForChild("Other")
+local killers = workspace:FindFirstChild("GameAssets"):FindFirstChild("Teams"):FindFirstChild("Killer")
+local survivors = workspace:FindFirstChild("GameAssets"):FindFirstChild("Teams"):FindFirstChild("Survivor")
+local other = workspace:FindFirstChild("GameAssets"):FindFirstChild("Teams"):FindFirstChild("Other")
 
 local lighting = game:GetService("Lighting")
 local runservice = game:GetService("RunService")
@@ -26,10 +26,10 @@ print("DOD Script Loaded!!")
 
 local function esp()
 	for i, v in killers:GetChildren() do
-		if v:WaitForChild("ESPNEW") then 
-			if v:WaitForChild("HumanoidRootPart"):WaitForChild("ESPNEW") then
+		if v:FindFirstChild("ESPNEW") then 
+			if v:FindFirstChild("HumanoidRootPart"):FindFirstChild("ESPNEW") then
 				pcall(function()
-					v:WaitForChild("HumanoidRootPart").ESPHP:WaitForChild("TextLabel").Text = tostring(math.round(v:WaitForChild("Humanoid").Health)).. "/".. tostring(v:WaitForChild("Humanoid").MaxHealth)
+					v:FindFirstChild("HumanoidRootPart").ESPHP:FindFirstChild("TextLabel").Text = tostring(math.round(v:FindFirstChild("Humanoid").Health)).. "/".. tostring(v:FindFirstChild("Humanoid").MaxHealth)
 				end)
 			end
 			continue
@@ -45,7 +45,7 @@ local function esp()
 		billboard.AlwaysOnTop = true
 		billboard.Size = UDim2.new(5, 0, 3, 0)
 		billboard.StudsOffset = Vector3.new(0, -2, 0)
-		billboard.Parent = v:WaitForChild("HumanoidRootPart")
+		billboard.Parent = v:FindFirstChild("HumanoidRootPart")
 		billboard.Name = "ESPNEW"
 
 		local text = Instance.new("TextLabel")
@@ -63,10 +63,10 @@ local function esp()
 		hpb.AlwaysOnTop = true
 		hpb.Size = UDim2.new(5, 0, 3, 0)
 		hpb.StudsOffset = Vector3.new(0, -3.5, 0)
-		hpb.Parent = v:WaitForChild("HumanoidRootPart")
+		hpb.Parent = v:FindFirstChild("HumanoidRootPart")
 
 		local hpt = Instance.new("TextLabel")
-		hpt.Text = tostring(math.round(v:WaitForChild("Humanoid").Health)).. "/".. tostring(v:WaitForChild("Humanoid").MaxHealth)
+		hpt.Text = tostring(math.round(v:WaitForChild("Humanoid").Health)).. "/".. tostring(v:FindFirstChild("Humanoid").MaxHealth)
 		hpt.Size = UDim2.new(1, 0, 1, 0)
 		hpt.BackgroundTransparency = 1
 		hpt.TextColor3 = Color3.fromRGB(255, 50, 50)
@@ -84,10 +84,10 @@ local function esp()
 		stroke.Parent = text
 	end
 	for i, v in survivors:GetChildren() do
-		if v:WaitForChild("ESPNEW") then 
-			if v:WaitForChild("HumanoidRootPart"):WaitForChild("ESPNEW") then
+		if v:FindFirstChild("ESPNEW") then 
+			if v:FindFirstChild("HumanoidRootPart"):FindFirstChild("ESPNEW") then
 				pcall(function()
-					v:WaitForChild("HumanoidRootPart").ESPHP:WaitForChild("TextLabel").Text = tostring(math.round(v:WaitForChild("Humanoid").Health)).. "/".. tostring(v:WaitForChild("Humanoid").MaxHealth)
+					v:FindFirstChild("HumanoidRootPart").ESPHP:FindFirstChild("TextLabel").Text = tostring(math.round(v:FindFirstChild("Humanoid").Health)).. "/".. tostring(v:FindFirstChild("Humanoid").MaxHealth)
 				end)
 			end
 			continue
@@ -104,7 +104,7 @@ local function esp()
 		billboard.AlwaysOnTop = true
 		billboard.Size = UDim2.new(5, 0, 3, 0)
 		billboard.StudsOffset = Vector3.new(0, -2, 0)
-		billboard.Parent = v:WaitForChild("HumanoidRootPart")
+		billboard.Parent = v:FindFirstChild("HumanoidRootPart")
 
 		local text = Instance.new("TextLabel")
 		text.Text = v.Name
@@ -121,10 +121,10 @@ local function esp()
 		hpb.AlwaysOnTop = true
 		hpb.Size = UDim2.new(5, 0, 3, 0)
 		hpb.StudsOffset = Vector3.new(0, -3.5, 0)
-		hpb.Parent = v:WaitForChild("HumanoidRootPart")
+		hpb.Parent = v:FindFirstChild("HumanoidRootPart")
 
 		local hpt = Instance.new("TextLabel")
-		hpt.Text = tostring(math.round(v:WaitForChild("Humanoid").Health)).. "/".. tostring(v:WaitForChild("Humanoid").MaxHealth)
+		hpt.Text = tostring(math.round(v:WaitForChild("Humanoid").Health)).. "/".. tostring(v:FindFirstChild("Humanoid").MaxHealth)
 		hpt.Size = UDim2.new(1, 0, 1, 0)
 		hpt.BackgroundTransparency = 1
 		hpt.TextColor3 = Color3.fromRGB(200, 200, 200)
@@ -143,7 +143,7 @@ local function esp()
 	end
 
 	for i, v in other:GetChildren() do
-		if v:WaitForChild("ESPNEW") then 
+		if v:FindFirstChild("ESPNEW") then 
 			continue
 		end
 
@@ -158,7 +158,7 @@ local function esp()
 		billboard.AlwaysOnTop = true
 		billboard.Size = UDim2.new(5, 0, 3, 0)
 		billboard.StudsOffset = Vector3.new(0, -2, 0)
-		billboard.Parent = v:WaitForChild("HumanoidRootPart")
+		billboard.Parent = v:FindFirstChild("HumanoidRootPart")
 
 		local text = Instance.new("TextLabel")
 		text.Text = v.Name
@@ -191,11 +191,11 @@ end
 
 local function deathlog(plr)
 	pcall(function()
-		plr.Character:WaitForChild("Humanoid").Died:Connect(function()
+		plr.Character:FindFirstChild("Humanoid").Died:Connect(function()
 			game:GetService("StarterGui"):SetCore("SendNotification",{
 				Title = "Die of Death Script", -- Required
 				Text = plr.Character.Name.. " (@"..players:GetPlayerFromCharacter(plr.Character).Name..") has died.", -- Required
-				Icon = "rbxassetid://1108819496302504" -- Optional
+				Icon = "rbxassetid://133992837986106" -- Optional
 			})
 		end)
 	end)

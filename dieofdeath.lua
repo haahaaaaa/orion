@@ -25,7 +25,7 @@ local players = game:GetService("Players")
 print("DOD Script Loaded!!")
 
 local function esp()
-	for i, v in ipairs(killers:GetChildren()) do
+	for i, v in killers:GetChildren() do
 		if v:FindFirstChild("ESPNEW") then 
 			if v:FindFirstChild("HumanoidRootPart"):FindFirstChild("ESPNEW") then
 				pcall(function()
@@ -83,7 +83,7 @@ local function esp()
 		stroke.Thickness = 1
 		stroke.Parent = text
 	end
-	for i, v in ipairs(survivors:GetChildren()) do
+	for i, v in survivors:GetChildren() do
 		if v:FindFirstChild("ESPNEW") then 
 			if v:FindFirstChild("HumanoidRootPart"):FindFirstChild("ESPNEW") then
 				pcall(function()
@@ -142,7 +142,7 @@ local function esp()
 		stroke.Parent = text
 	end
 
-	for i, v in ipairs(other:GetChildren()) do
+	for i, v in other:GetChildren() do
 		if v:FindFirstChild("ESPNEW") then 
 			continue
 		end

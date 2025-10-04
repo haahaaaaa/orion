@@ -21,7 +21,7 @@ local lighting = game:GetService("Lighting")
 local runservice = game:GetService("RunService")
 local players = game:GetService("Players")
 
-print("DOD Script Loaded!!")
+print("Die of Death Script Loaded!!")
 
 local function createESP(v, color)
 	-- Try to get HumanoidRootPart and Humanoid safely
@@ -54,7 +54,7 @@ local function createESP(v, color)
 	if not hrp:FindFirstChild("ESPNEW") then
 		local billboard = Instance.new("BillboardGui")
 		billboard.AlwaysOnTop = true
-		billboard.Size = UDim2.new(5, 0, 3, 0)
+		billboard.Size = UDim2.new(0, 200, 0, 50)
 		billboard.StudsOffset = Vector3.new(0, -2, 0)
 		billboard.Parent = hrp
 		billboard.Name = "ESPNEW"
@@ -64,14 +64,11 @@ local function createESP(v, color)
 		text.Size = UDim2.new(1, 0, 1, 0)
 		text.BackgroundTransparency = 1
 		text.TextColor3 = color
-		text.TextScaled = true
-		text.Font = Enum.Font.Fantasy
-		text.TextStrokeTransparency = 1
+		text.TextSize = 20
+		text.Font = Enum.Font.SourceSans
+		text.TextStrokeColor3 = Color3.new(0, 0, 0)
+		text.TextStrokeTransparency = 0
 		text.Parent = billboard
-
-		local stroke = Instance.new("UIStroke")
-		stroke.Thickness = 1
-		stroke.Parent = text
 	end
 
 	-- Health Billboard
@@ -79,7 +76,7 @@ local function createESP(v, color)
 		local hpb = Instance.new("BillboardGui")
 		hpb.Name = "ESPHP"
 		hpb.AlwaysOnTop = true
-		hpb.Size = UDim2.new(5, 0, 3, 0)
+		hpb.Size = UDim2.new(0, 200, 0, 50)
 		hpb.StudsOffset = Vector3.new(0, -3.5, 0)
 		hpb.Parent = hrp
 
@@ -88,17 +85,13 @@ local function createESP(v, color)
 		hpt.Size = UDim2.new(1, 0, 1, 0)
 		hpt.BackgroundTransparency = 1
 		hpt.TextColor3 = color
-		hpt.TextScaled = true
-		hpt.Font = Enum.Font.Fantasy
-		hpt.TextStrokeTransparency = 1
+		hpt.TextSize = 20
+		hpt.Font = Enum.Font.SourceSans
+		hpt.TextStrokeTransparency = 0
+		hpt.TextStrokeColor3 = Color3.new(0, 0, 0)
 		hpt.Parent = hpb
-
-		local stroke2 = Instance.new("UIStroke")
-		stroke2.Thickness = 1
-		stroke2.Parent = hpt
 	end
 
-	-- Update health text every frame
 	local hpGui = hrp:FindFirstChild("ESPHP")
 	if hpGui and hpGui:FindFirstChildWhichIsA("TextLabel") then
 		local hpt = hpGui:FindFirstChildWhichIsA("TextLabel")
@@ -129,25 +122,22 @@ local function createOtherESP(v, color)
 	-- Name Billboard
 	if not attachTo:FindFirstChild("ESPNEW") then
 		local billboard = Instance.new("BillboardGui")
-		billboard.Name = "ESPNEW"
 		billboard.AlwaysOnTop = true
-		billboard.Size = UDim2.new(5, 0, 3, 0)
+		billboard.Size = UDim2.new(0, 200, 0, 50)
 		billboard.StudsOffset = Vector3.new(0, -2, 0)
 		billboard.Parent = attachTo
+		billboard.Name = "ESPNEW"
 
 		local text = Instance.new("TextLabel")
 		text.Text = v.Name
 		text.Size = UDim2.new(1, 0, 1, 0)
 		text.BackgroundTransparency = 1
 		text.TextColor3 = color
-		text.TextScaled = true
-		text.Font = Enum.Font.Fantasy
-		text.TextStrokeTransparency = 1
+		text.TextSize = 20
+		text.Font = Enum.Font.SourceSans
+		text.TextStrokeColor3 = Color3.new(0, 0, 0)
+		text.TextStrokeTransparency = 0
 		text.Parent = billboard
-
-		local stroke = Instance.new("UIStroke")
-		stroke.Thickness = 1
-		stroke.Parent = text
 	end
 end
 
@@ -158,11 +148,11 @@ local function esp()
 	end
 	-- Survivors
 	for i, v in survivors:GetChildren() do
-		createESP(v, Color3.fromRGB(200, 200, 200))
+		createESP(v, Color3.fromRGB(255, 255, 255))
 	end
 	-- Other
 	for i, v in other:GetChildren() do
-		createOtherESP(v, Color3.fromRGB(200, 200, 200))
+		createOtherESP(v, Color3.fromRGB(255, 255, 0))
 	end
 
 	lighting.Brightness = 2
@@ -210,4 +200,3 @@ players.PlayerAdded:Connect(function(plr)
 end)
 
 runservice.RenderStepped:Connect(esp)
-
